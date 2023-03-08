@@ -16,7 +16,7 @@ function ListTask() {
         <>
             {datos.map((task, index) => (
 
-                <Alert key={index} className='mt-3 d-flex justify-content-between align-items-center' variant='success'>
+                <Alert key={index} className='mt-3 d-flex justify-content-between align-items-center' variant={task.completed ? 'success' : 'danger'}>
 
                     {task.title}
 

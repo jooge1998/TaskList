@@ -66,8 +66,6 @@ export function TaskContentProvider(props) {
     setDatos(newTodos);
   }
 
-
-
   return (
 
     <TaskContent.Provider value={
