@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
+import {TaskContent} from './../../context/TaskContent'
 
-function Form({createTask}) {
+/* icons */
+
+import { VscAdd } from "react-icons/vsc";
+
+
+function Form() {
+
+    const {createTask} = useContext(TaskContent)
 
     const [title, setTitle] = useState()
 
@@ -17,16 +25,18 @@ function Form({createTask}) {
     }
 
     return (
-        <>
-            <form className='d-flex' onSubmit={handleSubmit} method="post">
+      
+        <form className='d-flex' onSubmit={handleSubmit} method="post">
 
-                <input className='form-control' placeholder='Task' type="text" onChange={
-                    (e) => setTitle(e.target.value)
-                } value={title} autoFocus/>
+            <input className='form-control' placeholder='Task' type="text" onChange={
+                (e) => setTitle(e.target.value)
+            } value={title ? title: ''} autoFocus/>
 
-                <Button type='submit' className='mx-2' variant="primary">Add</Button>
-            </form>
-        </>
+            <Button type='submit' className='mx-2' variant="primary">
+                <VscAdd/>
+            </Button>
+        </form>
+       
     )
 }
 

@@ -2,14 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Task from "./Components/Card/Task";
 
+/* Context */
+import {TaskContentProvider} from './context/TaskContent'
+
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
       
-      <div className="container ">
-        <Task/>
+      <TaskContentProvider>
 
-      </div>
-    
+        <Task/>
+      </TaskContentProvider>
+      
   </React.StrictMode>,
 )
