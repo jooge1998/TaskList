@@ -5,7 +5,7 @@ import {TaskContent} from './../../context/TaskContent'
 
 /* icons */
 
-import { VscAdd } from "react-icons/vsc";
+import { VscAdd} from "react-icons/vsc";
 
 
 function Form() {
@@ -35,6 +35,7 @@ function Form() {
             <Button type='submit' className='mx-2' variant="primary">
                 <VscAdd/>
             </Button>
+
         </form>
        
     )
